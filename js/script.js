@@ -3,9 +3,9 @@
 /*computer randomly choose between rock,paper,scissors*/
     function computerRandomChoice () {
         let choice = ["rock","paper","scissors"];
+        return choice[Math.floor(Math.random()*choice.length)];
     }
-    /*randomly pick 1 item from the array*/
-    /*return result of the array*/
 /*compare result of player and computer then display the result*/
 
 /*play 5 round ,track result of each round and report the winner at the end*/
+console.log (computerRandomChoice ());
