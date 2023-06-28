@@ -8,42 +8,41 @@ function computerRandomChoice () {
 }
 /*compare result of player and computer then display the result*/
 function playRound (a,b) {
-    let score = 0
-    switch (a){
-        case "rock" : 
-            if (b === "rock"){score = 0}
-            else if (b === "paper"){score = -1}
-            else {score = 1};
-            break;
-        case "paper" :
-            if (b === "rock"){score = 1}
-            else if (b === "paper"){score = 0}
-            else {score = -1};
-            break;
-        case "scissors" :
-            if (b === "rock"){score = -1}
-            else if (b === "paper"){score = 1}
-            else {score = 0};
-            break;
+    if(a === "rock" || a ===  "paper" || a === "scissors"){
+        let score = 0
+        switch (a){
+            case "rock" : 
+                if (b === "rock") {score = 0}
+                else if (b === "paper"){score = -1}
+                else {score = 1};
+                break;
+            case "paper" :
+                if (b === "rock"){score = 1}
+                else if (b === "paper"){score = 0}
+                else {score = -1};
+                break;
+            case "scissors" :
+                if (b === "rock"){score = -1}
+                else if (b === "paper"){score = 1}
+                else {score = 0};
+                break;
+        }
+        switch(score){
+            case 1 :
+                alert ("You win the round!");
+                break;
+            case 0 :
+                alert ("You draw the round!");
+                break;
+            case -1 :
+                alert ("You lose the round!");
+                break;
+        } 
+        return score;
     }
-    return score;
+    else {
+        alert ("Wrong input! Please input Rock, Paper, or Scissors");
+    }
 }
-
-if (playerSelection === "rock" || playerSelection ===  "paper" || playerSelection === "scissors"){
-    switch(playRound (playerSelection,computerSelection)){
-        case 1 :
-            alert ("You win the round!");
-            break;
-        case 0 :
-            alert ("You draw the round!");
-            break;
-        case -1 :
-            alert ("You lose the round!");
-            break;
-    } 
-}
-else {
-    alert ("Wrong input! Please input Rock, Paper, or Scissors");
-}
-
 /*play 5 round ,track result of each round and report the winner at the end*/
+playRound (playerSelection,computerSelection);
