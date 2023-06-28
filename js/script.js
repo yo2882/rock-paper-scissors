@@ -1,7 +1,7 @@
 const choice = ["rock","paper","scissors"];
 let computerSelection = computerRandomChoice ();
 /*ask player input of rock,paper,scissors (case insensitive)*/
-
+let playerSelection = prompt ("Rock, Paper, or Scissors: ",)
 /*computer randomly choose between rock,paper,scissors*/
 function computerRandomChoice () {
     return choice[Math.floor(Math.random()*choice.length)];
