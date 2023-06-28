@@ -1,7 +1,6 @@
 const choice = ["rock","paper","scissors"];
-let computerSelection = computerRandomChoice ();
-/*ask player input of rock,paper,scissors (case insensitive)*/
-let playerSelection = prompt ("Rock, Paper, or Scissors: ").toLowerCase();
+let gameScore = 0;
+let score = 0;
 /*computer randomly choose between rock,paper,scissors*/
 function computerRandomChoice () {
     return choice[Math.floor(Math.random()*choice.length)];
@@ -9,7 +8,6 @@ function computerRandomChoice () {
 /*compare result of player and computer then display the result*/
 function playRound (a,b) {
     if(a === "rock" || a ===  "paper" || a === "scissors"){
-        let score = 0
         switch (a){
             case "rock" : 
                 if (b === "rock") {score = 0}
@@ -45,4 +43,13 @@ function playRound (a,b) {
     }
 }
 /*play 5 round ,track result of each round and report the winner at the end*/
-playRound (playerSelection,computerSelection);
+for (i=0; i<5 ; i++) {
+    let computerSelection = computerRandomChoice ();
+    /*ask player input of rock,paper,scissors (case insensitive)*/
+    let playerSelection = prompt ("Rock, Paper, or Scissors: ").toLowerCase();
+    playRound (playerSelection,computerSelection);
+    console.log(playerSelection);
+    console.log(computerSelection);
+    gameScore += score
+}
+console.log(gameScore);
