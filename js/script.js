@@ -28,4 +28,22 @@ function playRound (a,b) {
     }
     return score;
 }
+
+if (playerSelection === "rock" || playerSelection ===  "paper" || playerSelection === "scissors"){
+    switch(playRound (playerSelection,computerSelection)){
+        case 1 :
+            alert ("You win the round!");
+            break;
+        case 0 :
+            alert ("You draw the round!");
+            break;
+        case -1 :
+            alert ("You lose the round!");
+            break;
+    } 
+}
+else {
+    alert ("Wrong input! Please input Rock, Paper, or Scissors");
+}
+
 /*play 5 round ,track result of each round and report the winner at the end*/
