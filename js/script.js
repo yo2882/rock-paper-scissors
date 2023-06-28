@@ -51,10 +51,24 @@ function playRound (a,b) {
 }
 
 /*play 5 round ,track result of each round and report the winner at the end*/
-for (i=0; i<5 ; i++) {
-    let computerSelection = computerRandomChoice ();
-    let playerSelection = playerChoice();
-    playerSelection = playerSelection.toLowerCase();
-    playRound (playerSelection,computerSelection);
-    gameScore += score
+
+function game(){
+    for (i=0; i<5 ; i++) {
+        let computerSelection = computerRandomChoice ();
+        let playerSelection = playerChoice();
+        playRound (playerSelection,computerSelection);
+        gameScore += score
+    }
+    if (gameScore > 0) {
+        alert ("You won!");
+    }
+    else if (gameScore > 0) {
+        alert ("You lose!");
+    }
+    else {
+        alert ("You drew!");
+    }
+    gameScore = 0
 }
+
+game();
