@@ -16,8 +16,7 @@ function computerRandomChoice () {
 }
 
 /*ask player input of rock,paper,scissors by addEventListener*/
-
-choiceButtons = document.querySelectorAll('.rps-container button');    
+const choiceButtons = document.querySelectorAll('.rps-container button');    
 choiceButtons.forEach(choiceButton => {
     choiceButton.addEventListener('click',clicked)
 });
@@ -79,9 +78,11 @@ function playRound (a,b) {
 }
 
 function game(){
-    let computerSelection = computerRandomChoice ();
-    let playerSelection = input;
-    playRound (playerSelection,computerSelection);
+    if(playerScore < 3 ||computerScore < 3){
+        let computerSelection = computerRandomChoice ();
+        let playerSelection = input;
+        playRound (playerSelection,computerSelection);
+    }
     if(playerScore >= 3 ||computerScore >= 3){
         if(playerScore >= 3){
             alert ("You win the game")
@@ -89,13 +90,16 @@ function game(){
         if(computerScore >= 3){
             alert ("You lose the game")
         }
-        playerScore = 0;
-        computerScore = 0;
     }
 }
 
-
-
-
+/*button to reset the game*/
+const resetButton = document.querySelector('.reset-container button');
+resetButton.addEventListener('click',() =>{
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDisplay.textContent = playerScore; //reset score display
+    computerScoreDisplay.textContent = computerScore; //reset score display
+});
 
 
