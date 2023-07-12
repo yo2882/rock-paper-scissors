@@ -71,4 +71,4 @@ function game(){
     gameScore = 0
 }
 
-game();
+//game();
