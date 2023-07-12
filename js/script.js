@@ -35,31 +35,32 @@ function clicked() {
         
 /*compare result of player and computer then display the result*/
 function playRound (a,b) {
+    let roundResult = ""
     switch (a){
         case "rock" : 
-            if (b === "rock") {score = 0}
-            else if (b === "paper"){score = -1}
-            else {score = 1};
+            if (b === "rock"){roundResult = "draw"}
+            else if (b === "paper"){roundResult = "lose"}
+            else if (b === "scissors"){roundResult = "win"};
             break;
         case "paper" :
-            if (b === "rock"){score = 1}
-            else if (b === "paper"){score = 0}
-            else {score = -1};
+            if (b === "rock"){roundResult = "win"}
+            else if (b === "paper"){roundResult = "draw"}
+            else if(b === "scissors"){roundResult = "lose"};
             break;
         case "scissors" :
-            if (b === "rock"){score = -1}
-            else if (b === "paper"){score = 1}
-            else {score = 0};
+            if (b === "rock"){roundResult = "lose"}
+            else if (b === "paper"){roundResult = "win"}
+            else if(b === "scissors"){roundResult = "draw"};
             break;
     }
-    switch(score){
-        case 1 :
+    switch(roundResult){
+        case "win" :
             alert ("You win the round!");
             break;
-        case 0 :
+        case "draw" :
             alert ("You draw the round!");
             break;
-        case -1 :
+        case "lose" :
             alert ("You lose the round!");
             break;
     } 
