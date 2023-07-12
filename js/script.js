@@ -3,6 +3,13 @@ let playerScore = 0;
 let computerScore = 0;
 let score = 0;
 let input = ""
+
+/*Display the score*/
+const computerScoreDisplay = document.querySelector('.computer-choice .score');
+const playerScoreDisplay = document.querySelector('.player-choice .score');
+playerScoreDisplay.textContent = playerScore; //add to display 0 score before playing
+computerScoreDisplay.textContent = computerScore; //add to display 0 score before playing
+
 /*computer randomly choose between rock,paper,scissors*/
 function computerRandomChoice () {
     return choice[Math.floor(Math.random()*choice.length)];
@@ -67,6 +74,8 @@ function playRound (a,b) {
             alert ("You lose the round!");
             break;
     } 
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
 }
 
 function game(){
@@ -84,4 +93,9 @@ function game(){
         computerScore = 0;
     }
 }
+
+
+
+
+
 
