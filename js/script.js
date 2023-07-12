@@ -19,12 +19,15 @@ function clicked() {
     switch (choiceClass.value) {
         case "rock":
             input = "rock";
+            game();
         break;
         case "paper":
             input = "paper";
+            game();
         break;
         case "scissors":
-            input = "scissors";   
+            input = "scissors";  
+            game(); 
         break;
     }
     
@@ -63,37 +66,9 @@ function playRound (a,b) {
     return score;
 }
 
-/*old playerChoice() fuction using prompt
-function playerChoice() {
-    let input = prompt ("Rock, Paper, or Scissors: ").toString().toLowerCase();
-    while (input != "rock" && input != "paper" && input != "scissors"){
-        alert ("Wrong input! Please input Rock, Paper, or Scissors");
-        input = prompt ("Rock, Paper, or Scissors: ").toString().toLowerCase();
-    }
-    return input;
-}
-*/
-
-/*old function play 5 round ,track result of each round and report the winner at the end
-
 function game(){
-    for (i=0; i<5 ; i++) {
-        let computerSelection = computerRandomChoice ();
-        let playerSelection = input;
-        playRound (playerSelection,computerSelection);
-        gameScore += score
-    }
-    if (gameScore > 0) {
-        alert ("You won!");
-    }
-    else if (gameScore > 0) {
-        alert ("You lose!");
-    }
-    else {
-        alert ("You drew!");
-    }
-    gameScore = 0
+    let computerSelection = computerRandomChoice ();
+    let playerSelection = input;
+    playRound (playerSelection,computerSelection);
+    gameScore += score
 }
-
-*/
-
