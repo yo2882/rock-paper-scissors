@@ -1,5 +1,6 @@
 const choice = ["rock","paper","scissors"];
-let gameScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 let score = 0;
 let input = ""
 /*computer randomly choose between rock,paper,scissors*/
@@ -55,21 +56,32 @@ function playRound (a,b) {
     }
     switch(roundResult){
         case "win" :
+            playerScore +=1
             alert ("You win the round!");
             break;
         case "draw" :
             alert ("You draw the round!");
             break;
         case "lose" :
+            computerScore +=1
             alert ("You lose the round!");
             break;
     } 
-    return score;
 }
 
 function game(){
     let computerSelection = computerRandomChoice ();
     let playerSelection = input;
     playRound (playerSelection,computerSelection);
-    gameScore += score
+    if(playerScore >= 3 ||computerScore >= 3){
+        if(playerScore >= 3){
+            alert ("You win the game")
+        }
+        if(computerScore >= 3){
+            alert ("You lose the game")
+        }
+        playerScore = 0;
+        computerScore = 0;
+    }
 }
+
