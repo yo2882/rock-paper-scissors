@@ -1,13 +1,36 @@
 const choice = ["rock","paper","scissors"];
 let gameScore = 0;
 let score = 0;
-
+let input = ""
 /*computer randomly choose between rock,paper,scissors*/
 function computerRandomChoice () {
     return choice[Math.floor(Math.random()*choice.length)];
 }
 
-/*ask player input of rock,paper,scissors (case insensitive)*/
+/*ask player input of rock,paper,scissors by addEventListener*/
+
+choiceButtons = document.querySelectorAll('.rps-container button');    
+choiceButtons.forEach(choiceButton => {
+    choiceButton.addEventListener('click',clicked)
+});
+
+function clicked() {
+    const choiceClass = this.classList
+    switch (choiceClass.value) {
+        case "rock":
+            input = "rock";
+        break;
+        case "paper":
+            input = "paper";
+        break;
+        case "scissors":
+            input = "scissors";   
+        break;
+    }
+    
+}
+        
+/*old fuction using prompt
 function playerChoice() {
     let input = prompt ("Rock, Paper, or Scissors: ").toString().toLowerCase();
     while (input != "rock" && input != "paper" && input != "scissors"){
@@ -16,6 +39,7 @@ function playerChoice() {
     }
     return input;
 }
+*/
 
 /*compare result of player and computer then display the result*/
 function playRound (a,b) {
@@ -55,7 +79,7 @@ function playRound (a,b) {
 function game(){
     for (i=0; i<5 ; i++) {
         let computerSelection = computerRandomChoice ();
-        let playerSelection = playerChoice();
+        let playerSelection = input;
         playRound (playerSelection,computerSelection);
         gameScore += score
     }
@@ -71,4 +95,5 @@ function game(){
     gameScore = 0
 }
 
-//game();
+
+
