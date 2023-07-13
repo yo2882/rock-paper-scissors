@@ -58,6 +58,7 @@ function clicked() {
 }
 
 const resultDisplay = document.querySelector('.result')
+const descDisplay = document.querySelector('.description')
 
 /*compare result of player and computer then display the result*/
 function playRound (a,b) {
@@ -66,54 +67,57 @@ function playRound (a,b) {
         case "rock" : 
             if (b === "rock"){
                 roundResult = "draw"
-                resultDisplay.textContent = "The clash of rocks trembles the earth, neither emerges victorious"
+                descDisplay.textContent = "The clash of rocks trembles the earth, neither emerges victorious"
             }
             else if (b === "paper"){
                 roundResult = "lose"
-                resultDisplay.textContent = "Despite your unwavering might, cunning paper swaddles your rock"
+                descDisplay.textContent = "Despite your unwavering might, cunning paper swaddles your rock"
             }
             else if (b === "scissors"){
                 roundResult = "win"
-                resultDisplay.textContent = "Your mighty rock crushes through the feeble blades of the scissors"
+                descDisplay.textContent = "Your mighty rock crushes through the feeble blades of the scissors"
             };
             break;
         case "paper" :
             if (b === "rock"){
                 roundResult = "win"
-                resultDisplay.textContent = "With a graceful sweep, your paper envelops the rock and prevail"
+                descDisplay.textContent = "With a graceful sweep, your paper envelops the rock and prevail"
             }
             else if (b === "paper"){
                 roundResult = "draw"
-                resultDisplay.textContent = "Both paper interlock in a graceful dance, resulting in a draw"
+                descDisplay.textContent = "Both paper interlock in a graceful dance, resulting in a draw"
             }
             else if(b === "scissors"){
                 roundResult = "lose"
-                resultDisplay.textContent = "Your valiant paper falls prey to the sharp blades of the scissors"
+                descDisplay.textContent = "Your valiant paper falls prey to the sharp blades of the scissors"
             };
             break;
         case "scissors" :
             if (b === "rock"){
                 roundResult = "lose"
-                resultDisplay.textContent = "The resolute strike of your scissors falters against the immovable force of the rock"
+                descDisplay.textContent = "The resolute strike of your scissors falters against the immovable force of the rock"
             }
             else if (b === "paper"){
                 roundResult = "win"
-                resultDisplay.textContent = "With a swift and precise motion, your trusty scissors slice through the feeble paper"
+                descDisplay.textContent = "With a swift and precise motion, your trusty scissors slice through the feeble paper"
             }
             else if(b === "scissors"){
                 roundResult = "draw"
-                resultDisplay.textContent = "Both sets of scissors clash with a symphony of metallic echoes, the game ends in a draw"
+                descDisplay.textContent = "Both sets of scissors clash with a symphony of metallic echoes, the game ends in a draw"
             };
             break;
     }
     switch(roundResult){
         case "win" :
             playerScore +=1
+            resultDisplay.textContent = "You win!"
             break;
         case "draw" :
+            resultDisplay.textContent = "Draw!"
             break;
         case "lose" :
             computerScore +=1
+            resultDisplay.textContent = "You lose!"
             break;
     } 
     playerScoreDisplay.textContent = playerScore;
@@ -145,7 +149,8 @@ resetButton.addEventListener('click',() =>{
     computerScoreDisplay.textContent = computerScore; //reset score display
     playerImgDisplay.src = "img/question-mark.png"
     computerImgDisplay.src = "img/question-mark.png"
-    resultDisplay.textContent = "May the first to conquer three rounds emerge victorious"
+    resultDisplay.textContent = "In ancient game of Rock Paper Scissors, your strategic choices hold the power to shape your triumph or downfall."
+    descDisplay.textContent = "May the first to conquer three rounds emerge victorious"
 });
 
 
