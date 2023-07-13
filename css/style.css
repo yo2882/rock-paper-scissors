@@ -64,10 +64,14 @@ img{
 }
 
 .rps-container button {
-    background-color: #d6d6d6;
+    background-color: #ddbda7;
     padding: 12px;
     border: none;
     border-radius: 12px;
+}
+
+.rps-container button:hover {
+    background-color: #dfcec3;
 }
 
 .reset-container button {
@@ -78,4 +82,8 @@ img{
     font-size: 16px;
     color: white;
     font-size: 20px;
+}
+
+.reset-container button:hover {
+    background-color: #978272;
 }
